@@ -13,15 +13,10 @@
         
                 <div class="col-sm-8">
                     
-                    <h1>So, who is invited?</h1>
+                    <h1>Results</h1>
 
                     <form  class="form" action="." method="POST" >
-                        {{ formset.management_form }}
-                        {% csrf_token %}
-                        {% for form in formset %}
-                        {{ form.as_p }}
-                        {% endfor %}
-                        
+                                        
 
 
                                              

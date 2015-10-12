@@ -15,6 +15,7 @@ class Guest(models.Model):
 	related_event = models.ForeignKey(MyEvent)
 	guest_name = models.CharField(max_length=50)
 	guest_email = models.EmailField(max_length=254)
+	#guest_task = models.CharField(max_length=50)
 
 	def __str__(self):
 		return self.guest_name

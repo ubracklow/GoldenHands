@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'goha/base_start.html' %}    
+        
+
+    {% block content %}
+    
+
+    <div class="container">
+            <div class="row">
+        
+                <div class="col-sm-2">          
+                </div>
+        
+                <div class="col-sm-8">
+                    <h1>Assignments</h1>
+
+                   
+                {% for key, value in assignments.items %}
+
+
+                <div>
+                <h4> Lovely {{ value }}, please bring something {{ key }}!</h4>
+                </br>
+                </div>
+        
+                {% endfor %}
+
+                </div>
+
+            <div class="col-sm-2">          
+                
+
+
+                
+
+
+            </div>
+    </div>
+
+        
+
+    {% endblock %}
+
+        
