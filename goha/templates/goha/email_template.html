@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'goha/base_start.html' %}    
+        
+
+    {% block content %}
+    
+
+    <div class="container">
+            <div class="row">
+        
+                <div class="col-sm-2">          
+                </div>
+        
+                <div class="col-sm-8">
+                    
+                    <h4>Hey Golden Hands!</h4>
+                    <h4>Here comes all you need to know for our next meeting</h4> <br>
+                        
+
+                        <p> Where: {{event.location}}</p>
+                        <p> When: {{event.date_time}}</p> <br>
+
+                        <p>Our Host this time - lovely {{host.host_name}}. She will prepare something {{host_assignment}}.</p><br>
+
+                        <p>Also attending:</p>
+                        {% for guest in guests %}
+                        <p>Lovely {{ guest.guest_name }}  - please bring something {{ guest.guest_task }}. </p>
+                        {% endfor %}
+                   
+                    <h4>Be there or be square!</h4>
+
+                </div>
+
+            <div class="col-sm-2">          
+                
+                
+            </div>
+    </div>
+
+        
+
+    {% endblock %}
+
+        

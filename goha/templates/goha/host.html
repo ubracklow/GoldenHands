@@ -11,16 +11,19 @@
                 <div class="col-sm-2">          
                 </div>
         
-                <div class="col-sm-8">
+                <div class="col-sm-9">
                     
-                    <h1>Results</h1>
+                    <h1>The hostess with the mostess!</h1> <br>
 
                     <form  class="form" action="." method="POST" >
-                                        
-
-
+                        
+                        {% csrf_token %}
+                        
+                        {{ form.as_p }}
+                       
+                        
                                              
-                    <input id="submit" type="submit" value="Submit">
+                    <input id="submit" type="submit" value="Next Step - the guests">
                     
                     </form>
                     
@@ -28,7 +31,7 @@
 
                 </div>
 
-            <div class="col-sm-2">          
+            <div class="col-sm-1">          
                 
                 
             </div>

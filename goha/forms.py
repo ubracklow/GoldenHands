@@ -1,26 +1,29 @@
 from django import forms
-from .models import MyEvent, Guest
+from .models import Event, Guest, Host
 from datetimewidget.widgets import DateTimeWidget
 
 
 class EventForm(forms.ModelForm):
 
     class Meta:
-        model = MyEvent
-        fields = ('host_name', 'host_email', 'date_time', 'location', 'number_of_guests')
-        labels = {'host_name' : ('Who are you - hostess with the mostess?'), 'host_email' : ('Your E-Mail Address'), 'date_time' : ('When?'), 'location' : ('Where?'), 'number_of_guests' : ('How many guests are you inviting?'), }
+        model = Event
+        fields = ('location', 'date_time', 'number_of_guests')
+        labels = {'location' : ('Where?'), 'date_time' : ('When?'), 'number_of_guests' : ('How many guests are you inviting?'), }
     date_time = forms.DateTimeField(widget=DateTimeWidget(usel10n=True, bootstrap_version=3))
+
+
+class HostForm(forms.ModelForm):
+
+    class Meta:
+        model = Host
+        fields = ('host_name', 'host_email', 'host_choice')
+        labels = {'host_name' : ('Your Name'), 'host_email' : ('Your E-Mail Address'), 'host_choice' : ('What would you like to bring?')}
 
 class GuestForm(forms.ModelForm):
 
 	class Meta:
 		model = Guest
 		fields = ('guest_name', 'guest_email')
-		labels = {'guest_name' : ('Name'), 'guest_email' : ('E-Mail Address'),}
+		labels = {'guest_name' : ('Name of the guest'), 'guest_email' : ('E-Mail Address'),}
 
 
-class ContactForm(forms.Form):
-    subject = forms.CharField(max_length=100)
-    message = forms.CharField()
-    sender = forms.EmailField()
-    cc_myself = forms.BooleanField(required=False)
