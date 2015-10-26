@@ -78,7 +78,7 @@ def assignment_email(request, pk):
 		host_assignment = random.choice(task_list)
 		task_list.remove(host_assignment)
 
-		while len(task_list) < (event.number_of_guests + 1):
+		while len(task_list) < (event.number_of_guests):
 			task_list.append(random.choice(tasks))
 
 		for guest in guests:
