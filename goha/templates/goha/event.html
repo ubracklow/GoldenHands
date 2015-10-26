@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-{% extends 'goha/base_start.html' %}    
-        
+{% extends 'goha/base_start.html' %}
+
 
     {% block content %}
-    
+
 
     <div class="container">
             <div class="row">
-        
-                <div class="col-sm-2">          
+
+                <div class="col-sm-2">
                 </div>
-        
+
                 <div class="col-sm-9">
                     <h1>Welcome! You want to host the next gathering of Golden Hands? Awesome!</h1>
 
-            
+
                     <br />
-                    
+
 
                     <form  id="user_form" class="form" action="" method="POST" enctype="multipart/form-data">
-                   
+
                    {% csrf_token %}
                     {{ form.as_p }}
                     <input id="submit" type="submit" value="Next Step - Who are you?">
                     </form>
-                    
-                   
+                    <br>
+                    <h4>Use GoldenHands to send invitations for your craft club, poker night or any other gathering that involves people and snacks.</h4>
+
                 </div>
 
-            <div class="col-sm-1">          
-                
-                
+            <div class="col-sm-1">
+
+
             </div>
     </div>
 
-        
+
 
     {% endblock %}
 
-        
